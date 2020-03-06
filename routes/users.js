@@ -18,14 +18,12 @@ router.get('/register', (req, res) => {
   res.render('register');
 });
 
-// register with passport
 router.post('/register', userController.register);
 
 router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// login with passport
 router.post(
   '/login',
   passport.authenticate('local-login', {

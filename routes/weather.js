@@ -8,9 +8,14 @@ router.get('/', (req, res) => {
   fetch(`https://api.darksky.net/forecast/${process.env.SECRET_KEY}/42.3601,-71.0589?exclude=minutely,flags`)
     .then(result => result.json())
     .then(data => {
-      res.json(data)
+      res.send(data)
     })
-    .catch(err => console.log('error in api call', err));
+    .catch(err => res.send(err));
+  // if (req.isAuthenticated()) {
+  //   res.render('weather');
+  // } else {
+  //   res.send('Unauthorized');
+  // }
 });
 
 module.exports = router;
