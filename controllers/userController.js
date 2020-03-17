@@ -32,7 +32,7 @@ module.exports = {
                 });
               } else {
                 console.log('register...', req.session);
-                return res.redirect('/weather');
+                return res.redirect('/api/weather');
               }
             });
           })

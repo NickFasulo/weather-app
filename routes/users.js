@@ -27,8 +27,8 @@ router.get('/login', (req, res) => {
 router.post(
   '/login',
   passport.authenticate('local-login', {
-    successRedirect: '/weather',
-    failureRedirect: '/users/fail',
+    successRedirect: '/api/weather',
+    failureRedirect: '/api/users/fail',
     failureFlash: true
   })
 );
