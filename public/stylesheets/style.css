@@ -70,3 +70,7 @@ textarea {
   border-radius: 5px;
   padding: 5px;
 }
+
+#mapid {
+  height: 180px;
+}
