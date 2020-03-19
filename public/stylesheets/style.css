@@ -54,13 +54,6 @@ form button {
   border-radius: 0.3rem;
 }
 
-form button:hover {
-  margin-top: 1rem;
-  padding: 5px;
-  cursor: pointer;
-  border-radius: 0.3rem;
-}
-
 .form-links {
   margin-top: 1rem;
 }
@@ -71,6 +64,7 @@ textarea {
   padding: 5px;
 }
 
-#mapid {
-  height: 180px;
+nav {
+  display: flex;
+  justify-content: space-between;
 }
