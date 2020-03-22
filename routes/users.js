@@ -33,6 +33,11 @@ router.post(
   })
 );
 
+router.get('/logout', (req, res) => {
+  req.logout();
+  return res.redirect('/');
+});
+
 router.get('/fail', (req, res) => {
   return res.render('fail');
 });
