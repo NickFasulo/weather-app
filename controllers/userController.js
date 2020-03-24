@@ -15,14 +15,12 @@ module.exports = {
             message: 'User already exists'
           });
         }
+        
         const newUser = new User();
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(req.body.password, salt);
         newUser.name = req.body.name;
         newUser.email = req.body.email;
-        newUser.street = req.body.street;
-        newUser.city = req.body.city;
-        newUser.state = req.body.state;
         newUser.zip = req.body.zip;
         newUser.password = hash;
         newUser

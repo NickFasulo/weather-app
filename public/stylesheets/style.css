@@ -17,6 +17,10 @@ ul {
   list-style: none;
 }
 
+span {
+  display: none;
+}
+
 h1,
 h2 {
   display: flex;
@@ -50,7 +54,7 @@ form {
 }
 
 form input {
-  margin: 0.4rem;
+  margin: 0.5rem;
   padding: 5px;
   border: none;
   border-radius: 5px;
@@ -87,7 +91,8 @@ nav {
   background-color: rgba(211, 211, 211, 0.5);
 }
 
-nav h4 a:hover {
+nav h4 a:hover,
+h2 a:hover {
   text-decoration: underline;
 }
 
@@ -105,4 +110,10 @@ nav h4 a:hover {
 
 .nav-search {
   width: 100%;
+}
+
+#map {
+  height: 88vh;
+  width: 100%;
+  border-radius: 10px;
 }
