@@ -18,8 +18,10 @@
     <div id="map"></div>
     <% let lat = detail.lat %>; 
     <% let lon = detail.lon %>;
+    <% let summary = detail.summary %>;
+    <% let icon = detail.icon %>;
     <script>
-      const map = L.map('map').setView([<%= lat %>, <%= lon %>], 13);
+      const map = L.map('map').setView([<%= lat %>, <%= lon %>], 12);
       L.tileLayer(
         'https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=9hwct2iyimE8zg3KfMSF',
         {
@@ -32,7 +34,12 @@
         }
       ).addTo(map);
 
-      const marker = L.marker([<%= lat %>, <%= lon %>]).addTo(map);
+      const latlng = L.latLng(<%= lat %>, <%= lon %>);
+
+      const popup = L.popup()
+        .setLatLng(latlng)
+        .setContent('<img src="<%= icon %>.png" alt="..."><br /><p><%= summary %></p>')
+        .openOn(map);
     </script>
   </body>
 </html>
