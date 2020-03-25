@@ -16,12 +16,8 @@
   <body>
     <% include ./nav %>
     <div id="map"></div>
-    <% let lat = detail.lat %>; 
-    <% let lon = detail.lon %>;
-    <% let summary = detail.summary %>;
-    <% let icon = detail.icon %>;
     <script>
-      const map = L.map('map').setView([<%= lat %>, <%= lon %>], 12);
+      const map = L.map('map').setView([<%= items.lat %>, <%= items.lon %>], 13);
       L.tileLayer(
         'https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=9hwct2iyimE8zg3KfMSF',
         {
@@ -34,11 +30,11 @@
         }
       ).addTo(map);
 
-      const latlng = L.latLng(<%= lat %>, <%= lon %>);
+      const latlng = L.latLng(<%= items.lat %>, <%= items.lon %>);
 
       const popup = L.popup()
         .setLatLng(latlng)
-        .setContent('<img src="<%= icon %>.png" alt="..."><br /><p><%= summary %></p>')
+        .setContent('<div class="popup"><h3 id="location"><%= items.city %>, <%= items.state %></h3><h5></h5><div class="weather"><img id="icon" src="https://www.weatherbit.io/static/img/icons/<%= items.icon %>.png" alt="..."><br /><div class="temps"><p id="temp"><%= items.temp %>&deg;</p>&nbsp;&nbsp;<p id="app-temp"><%= items.appTemp %>&deg;</p></div></div></div>')
         .openOn(map);
     </script>
   </body>
