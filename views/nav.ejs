@@ -1,11 +1,11 @@
 <nav>
   <h3><a href="/">Weather Now</a></h3>
-  <form class="nav-form">
+  <form class="nav-form" action="/api/weather/search" method="POST">
     <input
       class="nav-search"
       type="text"
       name="search"
-      placeholder=" Search places"
+      placeholder="Search by postal / zip code"
     />
     <input class="nav-submit" type="submit" value="search" />
   </form>
