@@ -14,10 +14,12 @@ router.get('/', (req, res) => {
         let items = {
           lat: data.lat,
           lon: data.lon,
-          icon: data.data[0].weather.icon,
           city: data.city_name,
           state: data.state_code,
-          time: data.data[0].timestamp_local,
+          time: data.data[0].timestamp_local.slice(0, -9),
+          icon: data.data[0].weather.icon,
+          rain: data.data[0].pop,
+          wind: Math.round(data.data[0].wind_spd),
           temp: Math.round(data.data[0].temp),
           appTemp: Math.round(data.data[0].app_temp)
         };

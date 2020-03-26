@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <meta
       name="viewport"
       content="initial-scale=1,maximum-scale=1,user-scalable=no"
@@ -34,7 +35,7 @@
 
       const popup = L.popup()
         .setLatLng(latlng)
-        .setContent('<div class="popup"><h3 id="location"><%= items.city %>, <%= items.state %></h3><h5></h5><div class="weather"><img id="icon" src="https://www.weatherbit.io/static/img/icons/<%= items.icon %>.png" alt="..."><br /><div class="temps"><p id="temp"><%= items.temp %>&deg;</p>&nbsp;&nbsp;<p id="app-temp"><%= items.appTemp %>&deg;</p></div></div></div>')
+        .setContent('<div class="popup"><h2><%= items.city %>, <%= items.state %></h2><h4>Date: <%= items.time %></h4><div class="weather"><img id="icon" src="https://www.weatherbit.io/static/img/icons/<%= items.icon %>.png" alt="..."><br /><div class="wind-temp"><div class="temps"><p id="temp"><%= items.temp %>&deg;</p>&nbsp;&nbsp;<p id="app-temp"><%= items.appTemp %>&deg;</p></div><p id="wind">Wind: <%= items.wind %> mph</p><p id="rain">Chance of rain: <%= items.rain %>%</p></div></div><a href="#" id="save">&rarr; Save to Favorites</a></div>')
         .openOn(map);
     </script>
   </body>

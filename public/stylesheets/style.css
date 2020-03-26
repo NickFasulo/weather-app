@@ -124,11 +124,27 @@ h2 a:hover {
 
 .popup {
   display: flex;
+  align-items: center;
   flex-direction: column;
 }
 
-.popup p {
+.popup h2 {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.popup h4 {
+  display: flex;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.5);
   margin: 0;
+}
+
+.popup img {
+  width: 6rem;
+  height: 6rem;
+  margin: 1rem 1rem 0 0;
 }
 
 .temps {
@@ -149,14 +165,18 @@ h2 a:hover {
   margin: 0;
 }
 
-#icon {
-  width: 6rem;
-  height: 6rem;
-  margin-right: 0.5rem;
+#wind,
+#rain {
+  font-weight: bold;
+  color: #00b7ff;
+  margin: 0.5rem 0 0 0;
 }
 
-#location {
-  display: flex;
-  justify-content: center;
-  margin: 0.5rem 0 0.25rem 0;
+#save {
+  color: #00b7ff;
+  margin: 1rem 0 0 0;
+}
+
+#save:hover {
+  text-decoration: underline;
 }
