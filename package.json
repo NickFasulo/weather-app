@@ -19,6 +19,7 @@
     "express": "~4.16.1",
     "express-session": "^1.17.0",
     "http-errors": "~1.6.3",
+    "leaflet-search": "^2.9.8",
     "mongoose": "^5.9.3",
     "morgan": "~1.9.1",
     "node-fetch": "^2.6.0",
