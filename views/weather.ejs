@@ -1,42 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="initial-scale=1,maximum-scale=1,user-scalable=no"
     />
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js"></script>
     <link
+      href="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js"></script>
     <title>Weather Now</title>
   </head>
   <body>
     <% include ./nav %>
     <div id="map"></div>
     <script>
-      const map = L.map('map').setView([<%= items.lat %>, <%= items.lon %>], 13);
-      L.tileLayer(
-        'https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=9hwct2iyimE8zg3KfMSF',
-        {
-          tileSize: 512,
-          zoomOffset: -1,
-          minZoom: 1,
-          attribution:
-            '<a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>',
-          crossOrigin: true
-        }
-      ).addTo(map);
+      mapboxgl.accessToken = 'pk.eyJ1Ijoibm5pY2trMTQzIiwiYSI6ImNrN3l5NHU2eDAwa2UzZWxiNnY0dXpxcTEifQ.n5LhBYlZPEePiiTFE2Woig';
+      const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v9',
+      center: [<%= items.lon %>, <%= items.lat %>],
+      zoom: 13
+      });
 
-      const latlng = L.latLng(<%= items.lat %>, <%= items.lon %>);
-
-      const popup = L.popup()
-        .setLatLng(latlng)
-        .setContent('<div class="popup"><h2><%= items.city %>, <%= items.state %></h2><h4>Date: <%= items.date %></h4><div class="weather"><img id="icon" src="https://www.weatherbit.io/static/img/icons/<%= items.icon %>.png" alt="..."><br /><div class="wind-temp"><div class="temps"><p id="temp"><%= items.temp %>&deg;</p>&nbsp;&nbsp;<p id="app-temp"><%= items.appTemp %>&deg;</p></div><p id="wind">Wind: <%= items.wind %> mph</p><p id="rain">Chance of rain: <%= items.rain %>%</p></div></div><a href="#" id="save">&rarr; Save to Favorites</a></div>')
-        .openOn(map);
+      const popup = new mapboxgl.Popup({maxWidth: 'none'}).setLngLat([<%= items.lon %>, <%= items.lat %>])
+      .setHTML('<div class="popup"><h2><%= items.city %>, <%= items.state %></h2><h4>Date: <%= items.date %></h4><div class="weather"><img id="icon" src="https://www.weatherbit.io/static/img/icons/<%= items.icon %>.png" alt="..."><br /><div class="wind-temp"><div class="temps"><p id="temp"><%= items.temp %>&deg;</p>&nbsp;&nbsp;<p id="app-temp"><%= items.appTemp %>&deg;</p></div><p id="wind">Wind: <%= items.wind %> mph</p><p id="rain">Chance of rain: <%= items.rain %>%</p></div></div><a href="#" id="save">&rarr; Save to Favorites</a></div>').addTo(map);
     </script>
   </body>
 </html>

@@ -31,7 +31,6 @@ module.exports = {
     }
   },
   searchWeather: (req, res) => {
-    console.log('hello');
     if (req.isAuthenticated()) {
       console.log(req.body.search);
       fetch(
