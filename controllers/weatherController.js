@@ -9,6 +9,7 @@ module.exports = {
       )
         .then(data => data.json())
         .then(data => {
+          let user = req.user
           let items = {
             lat: data.lat,
             lon: data.lon,
@@ -21,7 +22,7 @@ module.exports = {
             temp: Math.round(data.data[0].temp),
             appTemp: Math.round(data.data[0].app_temp)
           };
-          return res.render('weather', { items });
+          return res.render('weather', { items, user });
         })
         .catch(err => {
           console.log(err);
