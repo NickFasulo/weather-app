@@ -42,4 +42,12 @@ router.get('/fail', (req, res) => {
   return res.render('fail');
 });
 
+router.get('/favorites', (req, res) => {
+  return res.render('favorites');
+});
+
+router.get('/profile', (req, res) => {
+  return res.render('profile');
+});
+
 module.exports = router;
