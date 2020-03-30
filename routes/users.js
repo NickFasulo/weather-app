@@ -42,12 +42,24 @@ router.get('/fail', (req, res) => {
   return res.render('fail');
 });
 
+router.get('/unauth', (req, res) => {
+  return res.render('unauth');
+});
+
 router.get('/favorites', (req, res) => {
-  return res.render('favorites');
+  if (req.isAuthenticated()) {
+    return res.render('favorites');
+  } else {
+    return res.redirect('/api/users/unauth');
+  }
 });
 
 router.get('/profile', (req, res) => {
-  return res.render('profile');
+  if (req.isAuthenticated()) {
+    return res.render('profile');
+  } else {
+    return res.redirect('/api/users/unauth');
+  }
 });
 
 module.exports = router;

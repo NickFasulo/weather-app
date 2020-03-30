@@ -9,7 +9,7 @@ module.exports = {
       )
         .then(data => data.json())
         .then(data => {
-          let user = req.user
+          let user = req.user;
           let items = {
             lat: data.lat,
             lon: data.lon,
@@ -28,7 +28,7 @@ module.exports = {
           console.log(err);
         });
     } else {
-      return res.send('Unauthorized');
+      return res.redirect('/api/users/unauth');
     }
   },
   searchWeather: (req, res) => {
@@ -57,7 +57,7 @@ module.exports = {
           console.log(err);
         });
     } else {
-      return res.send('Unauthorized');
+      return res.redirect('/api/users/unauth');
     }
   }
 };
