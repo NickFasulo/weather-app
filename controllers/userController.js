@@ -1,5 +1,6 @@
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
+const faker = require('faker');
 
 module.exports = {
   register: (req, res) => {
@@ -21,7 +22,8 @@ module.exports = {
         const hash = bcrypt.hashSync(req.body.password, salt);
         newUser.name = req.body.name;
         newUser.email = req.body.email;
-        newUser.zip = req.body.zip;
+        newUser.picture = faker.image.avatar();
+        newUser.location = req.body.location;
         newUser.password = hash;
         newUser
           .save()

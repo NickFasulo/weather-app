@@ -54,6 +54,10 @@ router.get('/favorites', (req, res) => {
   }
 });
 
+router.post('/favorites', (req, res) => {
+  
+})
+
 router.get('/profile', (req, res) => {
   if (req.isAuthenticated()) {
     return res.render('profile');

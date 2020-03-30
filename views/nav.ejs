@@ -5,13 +5,16 @@
       class="nav-search"
       type="text"
       name="search"
-      placeholder="Search by zip code"
+      placeholder="search places"
     />
     <input class="nav-submit" type="submit" value="search" />
   </form>
   <h4><a href="/api/users/favorites">Favorites</a></h4>
   <h4>
-    Hello&nbsp;<a href="/api/users/profile"><%= user.name.toUpperCase() %></a>
+    <img src="<%= user.picture %>" alt="..." />&nbsp;<a
+      href="/api/users/profile"
+      ><%= user.name.toUpperCase() %></a
+    >
   </h4>
   <h4><a href="/api/users/logout">Logout</a></h4>
 </nav>
