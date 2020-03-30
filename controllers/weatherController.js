@@ -5,7 +5,7 @@ module.exports = {
   getWeather: (req, res) => {
     if (req.isAuthenticated()) {
       fetch(
-        `https://api.weatherbit.io/v2.0/forecast/hourly?postal_code=${req.user.zip}&key=${process.env.SECRET_KEY}&units=I`
+        `https://api.weatherbit.io/v2.0/forecast/hourly?city=${req.user.location}&key=${process.env.SECRET_KEY}&units=I`
       )
         .then(data => data.json())
         .then(data => {
@@ -33,12 +33,12 @@ module.exports = {
   },
   searchWeather: (req, res) => {
     if (req.isAuthenticated()) {
-      console.log(req.body.search);
       fetch(
-        `https://api.weatherbit.io/v2.0/forecast/hourly?postal_code=${req.body.search}&key=${process.env.SECRET_KEY}&units=I`
+        `https://api.weatherbit.io/v2.0/forecast/hourly?city=${req.body.search}&key=${process.env.SECRET_KEY}&units=I`
       )
         .then(data => data.json())
         .then(data => {
+          let user = req.user;
           let items = {
             lat: data.lat,
             lon: data.lon,
@@ -51,7 +51,7 @@ module.exports = {
             temp: Math.round(data.data[0].temp),
             appTemp: Math.round(data.data[0].app_temp)
           };
-          return res.render('weather', { items });
+          return res.render('weather', { items, user });
         })
         .catch(err => {
           console.log(err);
