@@ -5,6 +5,10 @@ body {
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
+.body-two {
+  background-image: linear-gradient(to right, #0890ffaf, #ffffff, #0890ffaf);
+}
+
 a {
   color: #0890ff;
   margin-left: 0.5rem;
@@ -15,10 +19,6 @@ a {
 li,
 ul {
   list-style: none;
-}
-
-span {
-  display: none;
 }
 
 h1,
@@ -122,10 +122,85 @@ h2 a:hover {
   display: flex;
 }
 
+.favorites {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.favorites h1 {
+  margin: 1.5rem 0 1rem 0;
+  padding: 0;
+}
+
+.fav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.fav-list h3 {
+  margin: 1rem;
+}
+
+.fav-list h3 a {
+  margin: 0;
+  padding: 2px;
+}
+
+.fav-list h3 a:hover {
+  font-size: large;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile h1 {
+  margin: 1.5rem 0 1rem 0;
+  padding: 0;
+}
+
+.profile img {
+  border-radius: 5px;
+  box-shadow: 0 0 5rem #2600ff;
+}
+
+.profile a {
+  font-size: medium;
+}
+
+.profile a:hover {
+  text-decoration: underline;
+}
+
+.profile-info {
+  margin: 1rem 0 1.5rem 0;
+  padding: 0;
+  background-color: white;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: medium;
+}
+
+.profile-info div {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 2rem 0 0 0;
+}
+
 .popup {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin: 0.5rem;
 }
 
 .popup h2 {
@@ -145,6 +220,23 @@ h2 a:hover {
   width: 6rem;
   height: 6rem;
   margin: 1rem 1rem 0 0;
+}
+
+.popup form {
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+}
+
+.popup form button {
+  margin: 1rem 0 0 0;
+  padding: 2px;
+  border: none;
+  color: #00b7ff;
+}
+
+.popup form button:hover {
+  text-decoration: underline;
 }
 
 .temps {
@@ -170,13 +262,4 @@ h2 a:hover {
   font-weight: bold;
   color: #00b7ff;
   margin: 0.5rem 0 0 0;
-}
-
-#save {
-  color: #00b7ff;
-  margin: 1rem 0 0 0;
-}
-
-#save:hover {
-  text-decoration: underline;
 }

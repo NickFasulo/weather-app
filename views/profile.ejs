@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/stylesheets/style.css" />
-  <title>Profile</title>
-</head>
-<body>
-  <h1>Profile</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Profile</title>
+  </head>
+  <body class="body-two">
+    <div class="profile">
+      <h1>Profile for <%= user.name.toUpperCase() %></h1>
+      <img src="<%= user.picture %>" alt="..." />
+      <div class="profile-info">
+        <p>Name: &nbsp;<%= user.name.toUpperCase() %></p>
+        <p>Email: &nbsp;<%= user.email %></p>
+        <p>Home: &nbsp;<%= user.location %></p>
+        <div>
+          <a href="/api/users/update-profile">Edit</a>
+        </div>
+      </div>
+    </div>
+    <div class="form-links">
+      <a href="/api/users/favorites">Favorites</a> |
+      <a href="/api/weather">Weather</a>
+    </div>
+  </body>
 </html>

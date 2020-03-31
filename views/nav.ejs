@@ -9,12 +9,9 @@
     />
     <input class="nav-submit" type="submit" value="search" />
   </form>
-  <h4><a href="/api/users/favorites">Favorites</a></h4>
   <h4>
-    <img src="<%= user.picture %>" alt="..." />&nbsp;<a
-      href="/api/users/profile"
-      ><%= user.name.toUpperCase() %></a
-    >
+    Hello&nbsp;<a href="/api/users/profile"><%= user.name.toUpperCase() %></a>
   </h4>
+  <h4><a href="/api/users/favorites">Favorites</a></h4>
   <h4><a href="/api/users/logout">Logout</a></h4>
 </nav>

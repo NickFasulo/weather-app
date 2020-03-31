@@ -6,7 +6,22 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Favorites</title>
   </head>
-  <body>
-    <h1>Favorites</h1>
+  <body class="body-two">
+    <div class="favorites">
+      <h1>Favorites</h1>
+      <div class="fav-list">
+        <% for( let i = 0; i < favorites.length; i++ ) { %>
+        <h3>
+          <a href="api/weather/favweather"
+            ><%= favorites[i].location.city %>,
+            <%=favorites[i].location.state%></a>
+        </h3>
+        <% } %>
+      </div>
+    </div>
+    <div class="form-links">
+      <a href="/api/users/profile">Profile</a> |
+      <a href="/api/weather">Weather</a>
+    </div>
   </body>
 </html>

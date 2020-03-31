@@ -4,6 +4,7 @@ const passport = require('passport');
 require('../lib/passport');
 const User = require('../models/User');
 const userController = require('../controllers/userController');
+const favoriteController = require('../controllers/favoriteController');
 
 /* GET users listing. */
 router.get('/', (req, res) => {
@@ -46,21 +47,14 @@ router.get('/unauth', (req, res) => {
   return res.render('unauth');
 });
 
-router.get('/favorites', (req, res) => {
-  if (req.isAuthenticated()) {
-    return res.render('favorites');
-  } else {
-    return res.redirect('/api/users/unauth');
-  }
-});
+router.get('/favorites', favoriteController.getFavorites);
 
-router.post('/favorites', (req, res) => {
-  
-})
+router.post('/favorites', favoriteController.saveFavorite);
 
 router.get('/profile', (req, res) => {
   if (req.isAuthenticated()) {
-    return res.render('profile');
+    let user = req.user;
+    return res.render('profile', { user });
   } else {
     return res.redirect('/api/users/unauth');
   }
