@@ -3,7 +3,11 @@ const router = express.Router();
 const passport = require('passport');
 require('../lib/passport');
 const User = require('../models/User');
-const userController = require('../controllers/userController');
+const {
+  register,
+  updatePassword,
+  updateProfile
+} = require('../controllers/userController');
 const favoriteController = require('../controllers/favoriteController');
 
 /* GET users listing. */
@@ -19,7 +23,7 @@ router.get('/register', (req, res) => {
   res.render('register');
 });
 
-router.post('/register', userController.register);
+router.post('/register', register);
 
 router.get('/login', (req, res) => {
   res.render('login');
@@ -67,6 +71,17 @@ router.get('/update-profile', (req, res) => {
   } else {
     return res.redirect('/');
   }
+});
+
+router.put('/update-profile', (req, res, next) => {
+  updateProfile(req.body, req.user._id)
+    .then(user => {
+      return res.redirect('/api/users/profile');
+    })
+    .catch(err => {
+      console.log(err);
+      return res.redirect('/api/users/update-profile');
+    });
 });
 
 module.exports = router;

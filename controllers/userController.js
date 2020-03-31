@@ -16,7 +16,7 @@ module.exports = {
             message: 'User already exists'
           });
         }
-        
+
         const newUser = new User();
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(req.body.password, salt);
@@ -53,5 +53,24 @@ module.exports = {
           err
         })
       );
+  },
+  updateProfile: (params, id) => {
+    const { name, email, location } = params;
+    return new Promise((resolve, reject) => {
+      User.findById(id)
+        .then(user => {
+          if (name) user.name = name;
+          if (email) user.email = email;
+          if (location) user.location = location;
+
+          return user;
+        })
+        .then(user => {
+          user.save().then(user => {
+            resolve(user);
+          });
+        })
+        .catch(err => reject(err));
+    }).catch(err => reject(err));
   }
 };

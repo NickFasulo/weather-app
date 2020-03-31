@@ -76,6 +76,10 @@ form button {
   margin-top: 1rem;
 }
 
+.form-links a:hover {
+  text-decoration: underline;
+}
+
 textarea {
   border: none;
   border-radius: 5px;
@@ -211,6 +215,10 @@ h2 a:hover {
 
 .update-profile form fieldset {
   border: none;
+}
+
+.update-input {
+  cursor: pointer;
 }
 
 .update-profile-img {

@@ -6,6 +6,6 @@ router.get('/', weatherController.getWeather);
 
 router.post('/search', weatherController.searchWeather);
 
-router.get('/:city'+','+':state', weatherController.favWeather);
+router.get('/:city,:state', weatherController.favWeather);
 
 module.exports = router;
