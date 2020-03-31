@@ -10,11 +10,14 @@
     <div class="favorites">
       <h1>Favorites</h1>
       <div class="fav-list">
-        <% for( let i = 0; i < favorites.length; i++ ) { %>
+        <% for( let i = 0; i < favorites.length; i++ ) { %> 
+        <% let city = favorites[i].location.city %> 
+        <% let state = favorites[i].location.state %>
         <h3>
-          <a href="api/weather/favweather"
-            ><%= favorites[i].location.city %>,
-            <%=favorites[i].location.state%></a>
+          <a
+            href="api/weather/<%= city %>,<%= state %>"
+          >
+            <%= city %>, <%= state %></a>
         </h3>
         <% } %>
       </div>

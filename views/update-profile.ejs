@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Update Profile</title>
+  </head>
+  <body class="body-two">
+    <h1>Update Profile:</h1>
+    <div class="update-profile">
+      <form
+        role="form"
+        method="POST"
+        action="/api/users/update-profile?_method=PUT"
+      >
+        <fieldset>
+          <div class="update-profile-img">
+            <img
+              src="<%= user.picture %>"
+              alt="..."
+              style="border-radius: 5px;"
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form-control input-lg"
+              value="<%= user.name %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              class="form-control input-lg"
+              value="<%= user.email %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="address">Home:</label>
+            <input
+              type="text"
+              name="address"
+              id="address"
+              class="form-control input-lg"
+              value="<%= user.location %>"
+            />
+          </div>
+        </fieldset>
+        <input
+          type="submit"
+          class="btn btn-lg btn-success btn-block"
+          value="Update Profile"
+        />
+      </form>
+      <form
+        role="form"
+        method="POST"
+        action="/api/users/update-password?_method=PUT"
+      >
+        <h4 class="change-pass">Change Password:</h4>
+        <fieldset>
+          <div class="form-group">
+            <label for="oldPassword">Old Password:</label>
+            <input
+              type="password"
+              name="oldPassword"
+              id="oldPassword"
+              class="form-control input-lg"
+              placeholder="Old Password"
+            />
+          </div>
+          <div class="form-group">
+            <label for="newPassword">New Password:</label>
+            <input
+              type="password"
+              name="newPassword"
+              id="newPassword"
+              class="form-control input-lg"
+              placeholder="New Password"
+            />
+          </div>
+          <div class="form-group">
+            <label for="repeatNewPassword">Repeat New Password:</label>
+            <input
+              type="password"
+              name="repeatNewPassword"
+              id="repeatNewPassword"
+              class="form-control input-lg"
+              placeholder="New Password"
+            />
+          </div>
+        </fieldset>
+        <input
+          type="submit"
+          class="btn btn-lg btn-success btn-block"
+          value="Update Password"
+        />
+      </form>
+    </div>
+    <div class="form-links">
+      <a href="/api/users/profile">Back to Profile</a>
+    </div>
+  </body>
+</html>

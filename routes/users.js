@@ -60,4 +60,13 @@ router.get('/profile', (req, res) => {
   }
 });
 
+router.get('/update-profile', (req, res) => {
+  if (req.isAuthenticated()) {
+    let user = req.user;
+    return res.render('update-profile', { user });
+  } else {
+    return res.redirect('/');
+  }
+});
+
 module.exports = router;
