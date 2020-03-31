@@ -84,4 +84,15 @@ router.put('/update-profile', (req, res, next) => {
     });
 });
 
+router.put('/update-password', (req, res) => {
+  updatePassword(req.body, req.user._id)
+    .then(user => {
+      return res.redirect('/api/users/profile');
+    })
+    .catch(err => {
+      console.log('Error in route');
+      return res.redirect('/api/users/update-profile');
+    });
+});
+
 module.exports = router;

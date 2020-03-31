@@ -62,8 +62,10 @@ module.exports = {
   },
   favWeather: (req, res) => {
     if (req.isAuthenticated()) {
+     let city = req.params.city
+     let state = req.params.state;
       fetch(
-        `https://api.weatherbit.io/v2.0/forecast/hourly?city=:city,:state&key=${process.env.SECRET_KEY}&units=I`
+        `https://api.weatherbit.io/v2.0/forecast/hourly?city=${city},${state}&key=${process.env.SECRET_KEY}&units=I`
       )
         .then(data => data.json())
         .then(data => {
