@@ -25,6 +25,22 @@ module.exports = {
     } else {
       return res.redirect('/api/users/unauth');
     }
-  },
-  deleteFavorite: (req, res) => {}
+  }
+  // deleteFavorite: (req, res) => {
+  //   Favorite.findOne({ owner: req.user._id })
+  //     .then(favorite => {
+  //       favorite.location
+  //         .pull(req.body.location)
+  //         .save()
+  //         .then(favorites => {
+  //           res.render('favorites', { favorites });
+  //         })
+  //         .catch(err => {
+  //           console.log(err);
+  //         });
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // }
 };
