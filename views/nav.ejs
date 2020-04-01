@@ -1,5 +1,5 @@
 <nav>
-  <h3><a href="/">Weather Now</a></h3>
+  <h3><a href="/">The Weather Now</a></h3>
   <form class="nav-form" action="/api/weather/search" method="POST">
     <input
       class="nav-search"
@@ -9,9 +9,9 @@
     />
     <input class="nav-submit" type="submit" value="search" />
   </form>
-  <h4>
-    Hello&nbsp;<a href="/api/users/profile"><%= user.name %></a>
+  <h4 id="welcome">
+    <p>Welcome,</p>&nbsp;<a href="/api/users/profile"><%= user.name %></a>
   </h4>
-  <h4><a href="/api/users/favorites">Favorites</a></h4>
+  <h4><a href="/api/favorites">Favorites</a></h4>
   <h4><a href="/api/users/logout">Logout</a></h4>
 </nav>

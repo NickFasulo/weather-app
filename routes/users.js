@@ -8,7 +8,6 @@ const {
   updatePassword,
   updateProfile
 } = require('../controllers/userController');
-const favoriteController = require('../controllers/favoriteController');
 
 /* GET users listing. */
 router.get('/', (req, res) => {
@@ -50,10 +49,6 @@ router.get('/fail', (req, res) => {
 router.get('/unauth', (req, res) => {
   return res.render('unauth');
 });
-
-router.get('/favorites', favoriteController.getFavorites);
-
-router.post('/favorites', favoriteController.saveFavorite);
 
 router.get('/profile', (req, res) => {
   if (req.isAuthenticated()) {

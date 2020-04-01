@@ -24,5 +24,6 @@ module.exports = {
     } else {
       return res.redirect('/api/users/unauth');
     }
-  }
+  },
+  deleteFavorite: (req, res) => {}
 };
