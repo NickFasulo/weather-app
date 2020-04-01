@@ -312,3 +312,18 @@ h2 a:hover {
   color: white;
   text-shadow: 1px 1px 2px black;
 }
+
+#home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 2px;
+}
+
+#home img {
+  margin: 0;
+  padding: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+}

@@ -7,7 +7,8 @@ module.exports = {
         .populate('favorites')
         .exec((err, favorites) => {
           if (err) return next(err);
-          return res.render('favorites', { favorites });
+          let user = req.user;
+          return res.render('favorites', { favorites, user });
         });
     } else {
       return res.redirect('/api/users/unauth');

@@ -10,6 +10,7 @@
     <div class="favorites">
       <h1>Favorites</h1>
       <div class="fav-list">
+        <h3><a href="/api/weather"><%= user.location %></a></h3> 
         <% for( let i = 0; i < favorites.length; i++ ) { %> 
         <% let city = favorites[i].location.city %> 
         <% let state = favorites[i].location.state %>
