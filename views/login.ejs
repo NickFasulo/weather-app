@@ -7,21 +7,25 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Login</title>
   </head>
-  <body>
-    <h1>Login</h1>
-    <form action="/api/users/login" method="POST">
-      <div>
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" />
+  <body class="body-one">
+    <div class="landing">
+      <h1>Login</h1>
+      <div class="landing-form">
+        <form action="/api/users/login" method="POST">
+          <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" />
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+        <div class="form-links">
+          <a href="/api/users/register">Register</a> | <a href="/">Home</a>
+        </div>
       </div>
-      <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" />
-      </div>
-      <button type="submit">Login</button>
-    </form>
-    <div class="form-links">
-      <a href="/api/users/register">Register</a> | <a href="/">Home</a>
     </div>
   </body>
 </html>

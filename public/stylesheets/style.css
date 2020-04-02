@@ -21,7 +21,7 @@ a {
   text-decoration: none;
 }
 
-.title {
+.landing {
   background-image: linear-gradient(to bottom, #ffffff80, #00b7ffc0),
     url('../images/world.jpg');
   width: 100%;
@@ -29,7 +29,22 @@ a {
   background-size: cover;
 }
 
-#title {
+.landing-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0 0 0;
+  padding: 0;
+}
+
+.landing h1 {
+  margin: 5rem 0 0 0;
+  padding: 0;
+  text-shadow: 2px 2px 1px white;
+}
+
+#landing-title {
   margin: 9rem 0 0 0;
   padding: 0;
   text-shadow: 2px 2px 1px white;
@@ -101,6 +116,11 @@ form button {
 
 .form-links {
   margin-top: 1rem;
+}
+
+.form-links a {
+  color: #2600ff;
+  text-shadow: 1px 1px 1px white;
 }
 
 .form-links a:hover {
