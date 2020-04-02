@@ -1,7 +1,6 @@
 # weather-app
 
-/api/users/<%=location.city>/<%=location.state%> ejs
+Link to Heroku:
+https://nickfasulo-weathernow.herokuapp.com/
 
-/api/users/:city/:state route
 
-req.params.city req.params.state api
