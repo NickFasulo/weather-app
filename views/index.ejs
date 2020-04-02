@@ -6,12 +6,14 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title><%= title %></title>
   </head>
-  <body>
-    <h1>Welcome to <%= title %></h1>
-    <h2>
-      <a href="/api/users/register">Register</a>
-      - or -
-      <a href="/api/users/login">Login</a>
-    </h2>
+  <body class="body-one">
+    <div class="title">
+      <h1 id="title"><%= title %></h1>
+      <h2 id="title-links">
+        <a href="/api/users/register">Register</a>
+        - or -
+        <a href="/api/users/login">Login</a>
+      </h2>
+    </div>
   </body>
 </html>
