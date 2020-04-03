@@ -1,87 +1,127 @@
 # The Weather Now
 
-Weather API that shows you current weather data based on your location (city and state).
+TWN is a web app that shows you current weather data based on your location (city and state). There is also the option to search places for their current weather. User can save a list of favorite places to referance them later.
+* https://nickfasulo-weathernow.herokuapp.com/
+## How to Clone
 
-## Getting Started
+### After Cloning:
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
+* To install dependencies:
+```bash
+npm install
 ```
-Give examples
+* User will also have to create a ".env" file and include these environment variables: 
 ```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
+MONGODB_URI = "mongodb://localhost/weather-app"
+SESSION_SECRET = "secret"
+SECRET_KEY = "e96660ef60624fac870cd180cd182718"
 ```
-Give the example
-```
+* User must also have [Robo 3T](https://robomongo.org/) installed
 
-And repeat
+## Dependencies
 
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
+```javascript
+"dependencies": {
+  "bcryptjs": "^2.4.3",
+  "connect-flash": "^0.1.1",
+  "connect-mongo": "^3.2.0",
+  "cookie-parser": "~1.4.4",
+  "debug": "~2.6.9",
+  "dotenv": "^8.2.0",
+  "ejs": "~2.6.1",
+  "express": "~4.16.1",
+  "express-session": "^1.17.0",
+  "faker": "^4.1.0",
+  "http-errors": "~1.6.3",
+  "method-override": "^3.0.0",
+  "mongoose": "^5.9.3",
+  "morgan": "~1.9.1",
+  "node-fetch": "^2.6.0",
+  "passport": "^0.4.1",
+  "passport-local": "^1.0.0"
+}
 ```
 
-### And coding style tests
+## Routes
 
-Explain what these tests test and why
+### Parent:
 
+```javascript
+'/api/users'
+'/api/weather'
+'/api/favorites'
 ```
-Give an example
+
+### Children:
+
+### /users
+
+#### GET:
+
+```javascript
+'/register'
+'/login'
+'/logout'
+'/fail'
+'/unauth'
+'/profile'
+'/update-profile'
 ```
 
-## Deployment
+#### POST:
 
-Add additional notes about how to deploy this on a live system
+```javascript
+'/register'
+'/login'
+```
+
+#### PUT:
+
+```javascript
+'/update-profile'
+'/update-password'
+```
+
+### /weather
+
+#### GET:
+
+```javascript
+'/'
+'/:city/:state'
+```
+
+#### POST:
+
+```javascript
+'/search'
+```
+
+### /favorites
+
+#### GET:
+
+```javascript
+'/'
+```
+
+#### POST:
+
+```javascript
+'/'
+```
 
 ## Built With
 
-* [Express](https://expressjs.com/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Express](https://expressjs.com/) - Framework used.
+* [NPM](https://www.npmjs.com/) - Dependency management.
+* [Mapbox](https://docs.mapbox.com/mapbox-gl-js/api/) - Used to generate map.
+* [Weatherbit.io](https://www.weatherbit.io/api/weather-current) - Current weather API.
 
-## Contributing
+## Author
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* [NickFasulo](https://github.com/NickFasulo)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
