@@ -2,6 +2,7 @@
 
 TWN is a web app that shows you current weather data based on your location (city and state). There is also the option to search places for their current weather. User can save a list of favorite places to referance them later.
 * https://nickfasulo-weathernow.herokuapp.com/
+
 ## How to Clone
 
 ### After Cloning:
