@@ -27,7 +27,7 @@
       });
 
       const popup = new mapboxgl.Popup({maxWidth: 'none'}).setLngLat([<%= items.lon %>, <%= items.lat %>])
-      .setHTML('<div class="popup"><h2><%= items.city %>, <%= items.state %></h2><h4>Date: <%= items.date %></h4><div class="weather"><img id="icon" src="https://www.weatherbit.io/static/img/icons/<%= items.icon %>.png" alt="..."><br /><div class="wind-temp"><div class="temps"><p id="temp"><%= items.temp %>&deg;</p>&nbsp;&nbsp;<p id="app-temp"><%= items.appTemp %>&deg;</p></div><p id="wind">Wind: <%= items.wind %> mph</p><p id="rain">Chance of rain: <%= items.rain %>%</p></div></div><form method="POST" action="/api/favorites"><input type="hidden" value="<%= items.city %>" name="city" /><input type="hidden" value="<%= items.state %>" name="state" /><button type="submit">&rarr; Save to Favorites</button></form></div>').addTo(map);
+      .setHTML('<div class="popup"><h2><%= items.city %>, <%= items.state %></h2><h4><%= items.date %></h4><div class="weather"><img id="icon" src="https://www.weatherbit.io/static/img/icons/<%= items.icon %>.png" alt="..."><br /><div class="wind-temp"><div class="temps"><p id="temp"><%= items.temp %>&deg;</p>&nbsp;&nbsp;<p id="app-temp"><%= items.appTemp %>&deg;</p></div><p id="wind">Wind: <%= items.wind %> mph</p><p id="rain">Chance of rain: <%= items.rain %>%</p></div></div><form method="POST" action="/api/favorites"><input type="hidden" value="<%= items.city %>" name="city" /><input type="hidden" value="<%= items.state %>" name="state" /><button type="submit">&rarr; Save to Favorites</button></form></div>').addTo(map);
     </script>
   </body>
 </html>
