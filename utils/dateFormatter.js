@@ -15,6 +15,6 @@ module.exports = {
       { value: year },
     ] = dtf.formatToParts(date);
 
-    return day + ' ' + month + ' ' + year;
+    return month + ' ' + day + ' ' + year;
   },
 };
