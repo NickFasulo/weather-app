@@ -4,7 +4,7 @@ module.exports = {
     const dtf = new Intl.DateTimeFormat('en', {
       year: 'numeric',
       month: 'short',
-      day: '2-digit',
+      day: 'numeric',
     });
 
     const [
@@ -15,6 +15,6 @@ module.exports = {
       { value: year },
     ] = dtf.formatToParts(date);
 
-    return (currentDate = month + '-' + day + '-' + year);
+    return day + ' ' + month + ' ' + year;
   },
 };
