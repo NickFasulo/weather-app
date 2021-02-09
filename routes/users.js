@@ -6,7 +6,7 @@ const User = require('../models/User');
 const {
   register,
   updatePassword,
-  updateProfile
+  updateProfile,
 } = require('../controllers/userController');
 
 /* GET users listing. */
@@ -33,7 +33,7 @@ router.post(
   passport.authenticate('local-login', {
     successRedirect: '/api/weather',
     failureRedirect: '/api/users/fail',
-    failureFlash: true
+    failureFlash: true,
   })
 );
 
@@ -68,7 +68,7 @@ router.get('/update-profile', (req, res) => {
   }
 });
 
-router.put('/update-profile', (req, res, next) => {
+router.put('/update-profile', (req, res) => {
   updateProfile(req.body, req.user._id)
     .then(user => {
       return res.redirect('/api/users/profile');

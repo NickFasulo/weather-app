@@ -3,22 +3,6 @@
 TWN is a web app that shows you current weather data based on your location (city and state). There is also the option to search places for their current weather. User can save a list of favorite places to referance them later.
 * https://nickfasulo-weathernow.herokuapp.com/
 
-## How to Clone
-
-### After Cloning:
-
-* To install dependencies:
-```bash
-npm install
-```
-* User will also have to create a ".env" file and include these environment variables: 
-```
-MONGODB_URI = "mongodb://localhost/weather-app"
-SESSION_SECRET = "secret"
-SECRET_KEY = "e96660ef60624fac870cd180cd182718"
-```
-* User must also have [Robo 3T](https://robomongo.org/) installed
-
 ## Dependencies
 
 ```javascript

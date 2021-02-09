@@ -12,7 +12,7 @@ module.exports = {
         .then((data) => data.json())
         .then((data) => {
           let user = req.user;
-
+          console.log(data);
           let items = {
             lat: data.lat,
             lon: data.lon,
