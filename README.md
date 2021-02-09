@@ -1,6 +1,6 @@
 # The Weather Now
 
-TWN is a web app that shows you current weather data based on your location (city and state). There is also the option to search places for their current weather. User can save a list of favorite places to referance them later.
+TWN is a web app that shows you current weather data based on your location (city and state). There is also the option to search places for their current weather. User can save a list of favorite places to referance them later. Made with Express and EJS.
 * https://nickfasulo-weathernow.herokuapp.com/
 
 ## Dependencies
