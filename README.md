@@ -21,7 +21,8 @@ TWN is a web app that shows you current weather data based on your location (cit
   "method-override": "^3.0.0",
   "mongoose": "^5.9.3",
   "morgan": "~1.9.1",
-  "node-fetch": "^2.6.0",
+  "mquery": "^3.2.3",
+  "node-fetch": "^2.6.1",
   "passport": "^0.4.1",
   "passport-local": "^1.0.0"
 }
