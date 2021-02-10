@@ -5,7 +5,6 @@ const UserSchema = new mongoose.Schema({
     type: String,
     trim: true,
     required: true,
-    lowercase: true,
     default: '',
   },
   email: {
@@ -16,11 +15,15 @@ const UserSchema = new mongoose.Schema({
     lowercase: true,
     default: '',
   },
+  picture: {
+    type: String,
+    trim: true,
+    default: '',
+  },
   location: {
     type: String,
     trim: true,
     require: true,
-    lowercase: true,
     default: '',
   },
   favorite: { type: mongoose.Schema.Types.ObjectId, ref: 'Favorite' },
