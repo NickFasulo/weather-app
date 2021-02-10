@@ -24,7 +24,7 @@ mongoose
   .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true
+    useCreateIndex: true,
   })
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(`MongoDB Error: ${err}`));
@@ -49,8 +49,8 @@ app.use(
     store: new MongoStore({
       url: process.env.MONGODB_URI,
       autoReconnect: true,
-      cookie: { maxAge: 60000 }
-    })
+      cookie: { maxAge: 60000 },
+    }),
   })
 );
 
@@ -63,12 +63,12 @@ app.use('/api/weather', weatherRouter);
 app.use('/api/favorites', favoritesRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
