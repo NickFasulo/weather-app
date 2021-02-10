@@ -160,6 +160,11 @@ h2 a:hover {
   width: 100%;
 }
 
+.nav-home {
+  display: flex;
+  font-size: 2rem;
+}
+
 #map {
   height: 92vh;
   width: 100%;
